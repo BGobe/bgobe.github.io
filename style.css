@@ -9,7 +9,7 @@
 :root {
     --primary-color: #005f73;      /* Un bleu-vert profond pour les accents */
     --secondary-color: #0a9396;    /* Un cyan pour les liens et les hover */
-    --background-color: #f8f9fa;  /* Un fond très légèrement gris */
+    --background-color: #001c4c;  /* Un fond très légèrement gris */
     --surface-color: #ffffff;     /* Le blanc pour les cartes et sections */
     --text-color: #212529;        /* Un noir doux pour la lisibilité */
     --heading-color: #001219;     /* Un noir plus profond pour les titres */
