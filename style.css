@@ -1,30 +1,55 @@
-/* Variables CSS pour faciliter les changements de thème */
+/* =============================================
+   NOUVEAU STYLE POUR UN LOOK MODERNE ET ÉPURÉ
+   =============================================
+*/
+
+/* 1. Variables de couleurs et de polices
+   Une palette plus douce et professionnelle. Facile à modifier ! 
+*/
 :root {
-    --primary-color: #3498db; /* Bleu */
-    --secondary-color: #2c3e50; /* Gris foncé */
-    --accent-color: #e74c3c; /* Rouge */
-    --text-color: #333;
-    --light-text-color: #ecf0f1; /* Gris très clair */
-    --background-color: #f8f9fa; /* Presque blanc */
-    --footer-background: #2c3e50;
-    --nav-background: #34495e; /* Bleu foncé */
-    --link-hover-color: #ecf0f1;
+    --primary-color: #005f73;      /* Un bleu-vert profond pour les accents */
+    --secondary-color: #0a9396;    /* Un cyan pour les liens et les hover */
+    --background-color: #f8f9fa;  /* Un fond très légèrement gris */
+    --surface-color: #ffffff;     /* Le blanc pour les cartes et sections */
+    --text-color: #212529;        /* Un noir doux pour la lisibilité */
+    --heading-color: #001219;     /* Un noir plus profond pour les titres */
+    --light-text-color: #e9ecef;  /* Texte clair pour les fonds sombres (footer) */
+    
+    --font-headings: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05);
 }
 
+/* 2. Style de base et typographie
+   Applique les nouvelles polices et améliore la lisibilité.
+*/
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: var(--font-body);
+    line-height: 1.7; /* Espace entre les lignes pour aérer le texte */
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+/* 3. Barre de navigation
+   Un design plus subtil.
+*/
 header {
-    background-color: var(--nav-background);
-    color: var(--light-text-color);
+    background-color: var(--surface-color);
     padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
+    position: sticky; /* Reste en haut lors du défilement */
+    top: 0;
+    z-index: 10;
 }
 
 nav ul {
@@ -40,198 +65,163 @@ nav ul li {
 }
 
 nav a {
-    color: var(--light-text-color);
+    color: var(--text-color);
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-    padding: 5px 10px;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    font-weight: 600;
+    font-family: var(--font-headings);
+    font-size: 1em;
+    padding: 8px 12px;
     border-radius: 5px;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-nav a:hover, nav a.active {
+nav a:hover {
     color: var(--primary-color);
-    background-color: var(--light-text-color);
 }
 
+/* Effet de soulignement subtil au survol */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+/* 4. Conteneur principal et sections */
 main {
     max-width: 900px;
-    margin: 20px auto;
+    margin: 40px auto;
     padding: 0 20px;
 }
 
 .hero {
     text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: var(--light-text-color);
-    border-radius: 8px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 80px 30px;
+    background: var(--surface-color);
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border: 1px solid #dee2e6;
 }
 
 .hero h1 {
-    font-size: 3em;
-    margin-bottom: 15px;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--heading-color);
 }
 
 .hero p {
-    font-size: 1.2em;
-    opacity: 0.9;
+    font-size: 1.25rem;
+    color: #495057;
 }
 
-.content-section {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    margin-bottom: 30px;
-}
-
-.content-section h1, .content-section h2 {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.content-section ul {
-    list-style: disc;
-    margin-left: 20px;
-    margin-bottom: 15px;
-}
-
-.content-section ul li {
-    margin-bottom: 8px;
+.content-section, .quick-links {
+    background-color: var(--surface-color);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 40px;
 }
 
 .project-image {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-sm);
 }
 
+/* 5. Boutons et Liens */
 .button {
     display: inline-block;
     background-color: var(--primary-color);
-    color: var(--light-text-color);
-    padding: 10px 20px;
+    color: #ffffff;
+    padding: 12px 25px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px; /* Boutons arrondis */
+    font-weight: bold;
+    font-family: var(--font-headings);
     margin-right: 10px;
     margin-top: 15px;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 2px solid var(--primary-color);
 }
 
 .button:hover {
     background-color: var(--secondary-color);
-    transform: translateY(-2px);
-}
-
-.quick-links {
-    text-align: center;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    margin-bottom: 30px;
-}
-
-.quick-links h2 {
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-}
-
-.quick-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.quick-links ul li {
-    margin-bottom: 10px;
-}
-
-.quick-links a {
-    display: block;
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.quick-links a:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-2px);
+    border-color: var(--secondary-color);
+    transform: translateY(-3px); /* Effet de soulèvement */
+    box-shadow: var(--shadow-md);
 }
 
 
+/* 6. Pied de page (Footer) */
 footer {
     text-align: center;
-    padding: 25px 20px; /* Un peu plus d'espace */
-    background-color: var(--footer-background);
+    padding: 30px 20px;
+    background-color: var(--heading-color); /* Fond très sombre */
     color: var(--light-text-color);
-    margin-top: 40px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+    margin-top: 60px;
 }
 
 .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Espace entre les icônes et le texte */
+    gap: 20px;
 }
 
 .social-icons {
     display: flex;
-    gap: 25px; /* Espace entre chaque icône */
+    gap: 30px;
 }
 
 .social-icons a {
     color: var(--light-text-color);
-    font-size: 1.8rem; /* Taille des icônes (rem = responsive) */
-    text-decoration: none;
+    font-size: 1.5rem;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: var(--primary-color); /* Change la couleur au survol */
-    transform: scale(1.2); /* Fait grossir l'icône au survol */
+    color: var(--secondary-color);
+    transform: scale(1.2);
 }
 
 .legal-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    font-size: 0.9em;
 }
 
 .legal-links p {
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 .legal-links a {
     color: var(--light-text-color);
     text-decoration: underline;
-    transition: color 0.3s ease;
+    opacity: 0.8;
 }
 
 .legal-links a:hover {
-    color: var(--primary-color);
+    opacity: 1;
 }
 
-/* Responsive design */
+/* Responsive design pour les petits écrans */
 @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
     nav ul li {
         display: block;
         margin: 10px 0;
-    }
-
-    .hero h1 {
-        font-size: 2.5em;
     }
 }
