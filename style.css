@@ -223,3 +223,112 @@ body {
         padding: 20px;
     }
 }
+/* =============================================
+   STYLE POUR LA PAGE "TRAVAUX RÉCENTS"
+   =============================================
+*/
+
+/* 7. Structure de la page Travaux */
+.page-container {
+    background-color: var(--bg-left); /* Utilise votre beige clair */
+    color: var(--text-dark); /* Utilise votre bleu marine pour le texte */
+    flex: 1; /* Permet à la page de prendre toute la hauteur disponible */
+    width: 100%;
+    padding: 20px 40px 60px 40px; /* Ajoute de l'espace autour du contenu */
+    box-sizing: border-box;
+}
+
+.page-header {
+    display: flex;
+    justify-content: flex-end; /* Aligne le lien "ACCUEIL" à droite */
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+.page-header a {
+    font-family: var(--font-headings);
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* 8. Section principale et galerie */
+.work-section {
+    max-width: 1200px;
+    margin: 0 auto; /* Centre la section */
+}
+
+.work-title {
+    font-family: var(--font-headings);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 60px;
+    color: var(--text-dark);
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: space-around; /* Espace les éléments équitablement */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur petits écrans */
+    gap: 40px; /* Espace entre les projets */
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espace entre l'image et le lien */
+}
+
+/* 9. Style des images avec la forme inclinée */
+.image-clipper {
+    width: 280px; /* Ajustez la taille selon vos besoins */
+    height: 350px;
+    background-color: var(--bg-footer); /* Fond bleu si l'image ne charge pas */
+    /* La magie du clip-path pour créer la forme ! */
+    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-clipper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que l'image remplit l'espace sans se déformer */
+}
+
+.gallery-item:hover .image-clipper {
+    transform: scale(1.05); /* Effet de zoom léger au survol */
+}
+
+.project-link {
+    font-family: var(--font-headings);
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    border-bottom: 2px solid transparent; /* Prépare l'animation du soulignement */
+    transition: border-color 0.3s ease;
+}
+
+.project-link:hover {
+    border-color: var(--text-dark); /* Fait apparaître le soulignement au survol */
+}
+
+/* 10. Responsive pour la page Travaux */
+@media (max-width: 992px) {
+    .gallery-container {
+        flex-direction: column; /* Empile les projets verticalement */
+        align-items: center;
+        gap: 50px;
+    }
+    
+    .work-title {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    
+    .page-container {
+        padding: 20px;
+    }
+}
