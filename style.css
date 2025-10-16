@@ -1,227 +1,206 @@
 /* =============================================
-   NOUVEAU STYLE POUR UN LOOK MODERNE ET ÉPURÉ
+   STYLE POUR LA VERSION FINALE DU SITE
    =============================================
 */
 
-/* 1. Variables de couleurs et de polices
-   Une palette plus douce et professionnelle. Facile à modifier ! 
-*/
+/* 1. Variables et styles de base */
 :root {
-    --primary-color: #005f73;      /* Un bleu-vert profond pour les accents */
-    --secondary-color: #0a9396;    /* Un cyan pour les liens et les hover */
-    --background-color: #ffe3b3;  /* Un fond beige chaud */
-    --surface-color: #ffffff;     /* Le blanc pour les cartes et sections */
-    --text-color: #001c4c;        /* Un noir doux pour la lisibilité */
-    --heading-color: #001c4c;     /* Un noir plus profond pour les titres */
-    --light-text-color: #e9ecef;  /* Texte clair pour les fonds sombres (footer) */
-    
+    --bg-left: #fdfae7;        /* Beige clair */
+    --bg-footer: #001e4a;     /* Bleu marine foncé */
+    --text-dark: #333333;       /* Gris foncé pour le texte */
+    --text-light: #ffffff;     /* Blanc */
+    --logo-color: #001e4a;     /* La couleur du logo (bleu marine) */
+    --cta-bg: #fdfae7;        /* Beige pour le bouton */
+    --cta-text: #333333;       /* Texte du bouton */
+
     --font-headings: 'Montserrat', sans-serif;
     --font-body: 'Lato', sans-serif;
-
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.05);
-    --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* 2. Style de base et typographie
-   Applique les nouvelles polices et améliore la lisibilité.
-*/
-body {
-    font-family: var(--font-body);
-    line-height: 1.7; /* Espace entre les lignes pour aérer le texte */
+html, body {
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    height: 100%;
+    font-family: var(--font-body);
+    overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-headings);
-    color: var(--heading-color);
-    margin-bottom: 1rem;
+body {
+    display: flex;
+    flex-direction: column; /* Organise le body en colonne (main, puis footer) */
 }
 
-/* 3. Barre de navigation
-   Un design plus subtil.
-*/
-header {
-    background-color: var(--surface-color);
-    padding: 1rem 0;
-    box-shadow: var(--shadow-sm);
-    position: sticky; /* Reste en haut lors du défilement */
-    top: 0;
-    z-index: 10;
+
+/* 2. Conteneur principal et panneaux */
+.main-container {
+    display: flex;
+    flex: 1; /* Permet au conteneur de grandir pour remplir l'espace disponible */
+    min-height: 0; /* Correction pour flexbox dans certains navigateurs */
 }
 
-nav ul {
+.left-panel {
+    flex: 0 0 40%; /* Prend 40% de la largeur */
+    background-color: var(--bg-left);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre le contenu verticalement */
+    align-items: flex-start; /* Aligne le contenu à gauche */
+    padding: 40px 60px;
+    box-sizing: border-box;
+}
+
+.right-panel {
+    flex: 1; /* Prend le reste de la largeur (60%) */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-panel .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recouvre l'espace sans déformer l'image */
+}
+
+/* 3. Contenu du panneau gauche */
+.main-logo {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.left-panel h2 {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.main-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
 }
 
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
+.main-nav li {
+    margin-bottom: 20px;
 }
 
-nav a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 600;
+.main-nav a {
     font-family: var(--font-headings);
-    font-size: 1em;
-    padding: 8px 12px;
-    border-radius: 5px;
-    position: relative;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: var(--primary-color);
+.main-nav a:hover {
+    color: #000;
 }
 
-/* Effet de soulignement subtil au survol */
-nav a::after {
-    content: '';
+/* 4. Bouton sur l'image (CTA) */
+.cta-button {
     position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
+    bottom: 50px;
     left: 50%;
-    background-color: var(--primary-color);
-    transition: all 0.3s ease-in-out;
-}
-
-nav a:hover::after {
-    width: 100%;
-    left: 0;
-}
-
-
-/* 4. Conteneur principal et sections */
-main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.hero {
-    text-align: center;
-    padding: 80px 30px;
-    background: var(--surface-color);
-    border-radius: 12px;
-    margin-bottom: 40px;
-    border: 1px solid #dee2e6;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--heading-color);
-}
-
-.hero p {
-    font-size: 1.25rem;
-    color: #495057;
-}
-
-.content-section, .quick-links {
-    background-color: var(--surface-color);
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-    margin-bottom: 40px;
-}
-
-.project-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 25px;
-    box-shadow: var(--shadow-sm);
-}
-
-/* 5. Boutons et Liens */
-.button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 12px 25px;
+    transform: translateX(-50%);
+    background-color: var(--cta-bg);
+    color: var(--cta-text);
+    padding: 12px 28px;
     text-decoration: none;
-    border-radius: 50px; /* Boutons arrondis */
-    font-weight: bold;
     font-family: var(--font-headings);
-    margin-right: 10px;
-    margin-top: 15px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: 2px solid var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-.button:hover {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-    transform: translateY(-3px); /* Effet de soulèvement */
-    box-shadow: var(--shadow-md);
+.cta-button:hover {
+    transform: translateX(-50%) translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-
-/* 6. Pied de page (Footer) */
-footer {
-    text-align: center;
-    padding: 30px 20px;
-    background-color: var(--heading-color); /* Fond très sombre */
-    color: var(--light-text-color);
-    margin-top: 60px;
-}
-
-.footer-content {
+/* 5. Pied de page (Footer) */
+.main-footer {
+    background-color: var(--bg-footer);
+    color: var(--text-light);
+    padding: 20px 40px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between; /* Pousse les éléments aux extrémités */
     align-items: center;
-    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .social-icons {
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 
 .social-icons a {
-    color: var(--light-text-color);
-    font-size: 1.5rem;
+    color: var(--text-light);
+    font-size: 1.4rem;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: var(--secondary-color);
-    transform: scale(1.2);
+    color: #a9a9a9; /* Un gris clair au survol */
+    transform: scale(1.1);
 }
 
-.legal-links {
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     font-size: 0.9em;
+    font-family: var(--font-headings);
 }
 
-.legal-links p {
-    margin: 0 0 10px 0;
-}
-
-.legal-links a {
-    color: var(--light-text-color);
-    text-decoration: underline;
+.footer-links a, .footer-links span {
+    color: var(--text-light);
+    text-decoration: none;
     opacity: 0.8;
 }
 
-.legal-links a:hover {
+.footer-links a:hover {
     opacity: 1;
+    text-decoration: underline;
 }
 
-/* Responsive design pour les petits écrans */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
+/* 6. Responsive Design */
+@media (max-width: 992px) {
+    body {
+        height: auto; /* Permet le défilement sur mobile */
     }
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+
+    .main-container {
+        flex-direction: column; /* Empile les panneaux */
+    }
+
+    .left-panel {
+        flex-basis: auto; /* Supprime la largeur fixe */
+        padding: 40px 30px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .right-panel {
+        flex-basis: auto;
+        min-height: 400px; /* Donne une hauteur minimale à l'image */
+        width: 100%;
+    }
+
+    .main-footer {
+        flex-direction: column; /* Empile les éléments du footer */
+        gap: 15px;
+        padding: 20px;
     }
 }
