@@ -6,10 +6,10 @@
 /* 1. Variables et styles de base */
 :root {
     --bg-left: #ffe3b3;        /* Beige clair */
-    --bg-footer: #001e4a;     /* Bleu marine foncé */
-    --text-dark: #333333;       /* Gris foncé pour le texte */
+    --bg-footer: #001c4c;     /* Bleu marine foncé */
+    --text-dark: #001c4c;       /* Gris foncé pour le texte */
     --text-light: #ffffff;     /* Blanc */
-    --logo-color: #001e4a;     /* La couleur du logo (bleu marine) */
+    --logo-color: #001c4c;     /* La couleur du logo (bleu marine) */
     --cta-bg: #ffe3b3;        /* Beige pour le bouton */
     --cta-text: #333333;       /* Texte du bouton */
 
