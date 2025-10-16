@@ -134,8 +134,10 @@ body {
     color: var(--text-light);
     padding: 20px 40px;
     display: flex;
-    justify-content: space-between; /* Pousse les éléments aux extrémités */
+    flex-direction: column;
+    justify-content: center; /* Pousse les éléments aux extrémités */
     align-items: center;
+    gap: 15px;
     width: 100%;
     box-sizing: border-box;
 }
