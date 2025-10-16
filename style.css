@@ -11,7 +11,7 @@
     --text-light: #ffffff;     /* Blanc */
     --logo-color: #001c4c;     /* La couleur du logo (bleu marine) */
     --cta-bg: #ffe3b3;        /* Beige pour le bouton */
-    --cta-text: #333333;       /* Texte du bouton */
+    --cta-text: #ffe3b3;       /* Texte du bouton */
 
     --font-headings: 'Montserrat', sans-serif;
     --font-body: 'Lato', sans-serif;
