@@ -5,12 +5,12 @@
 
 /* 1. Variables et styles de base */
 :root {
-    --bg-left: #fdfae7;        /* Beige clair */
+    --bg-left: #ffe3b3;        /* Beige clair */
     --bg-footer: #001e4a;     /* Bleu marine foncé */
     --text-dark: #333333;       /* Gris foncé pour le texte */
     --text-light: #ffffff;     /* Blanc */
     --logo-color: #001e4a;     /* La couleur du logo (bleu marine) */
-    --cta-bg: #fdfae7;        /* Beige pour le bouton */
+    --cta-bg: #ffe3b3;        /* Beige pour le bouton */
     --cta-text: #333333;       /* Texte du bouton */
 
     --font-headings: 'Montserrat', sans-serif;
