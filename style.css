@@ -253,82 +253,75 @@ body {
     font-size: 0.9rem;
 }
 
-/* 8. Section principale et galerie */
+/* 8. Section principale et galerie (MODIFIÉ) */
 .work-section {
-    max-width: 1200px;
-    margin: 0 auto; /* Centre la section */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .work-title {
-    font-family: var(--font-headings);
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 60px;
-    color: var(--text-dark);
+    font-family: var(--font-headings);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 60px;
+    color: var(--text-dark);
 }
 
 .gallery-container {
-    display: flex;
-    justify-content: space-around; /* Espace les éléments équitablement */
-    align-items: flex-start;
-    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur petits écrans */
-    gap: 40px; /* Espace entre les projets */
+    display: flex;
+    flex-wrap: wrap;     /* <-- LA CLÉ : Permet aux éléments de passer à la ligne */
+    justify-content: center; /* <-- MIEUX : Centre les projets, plus joli quand il n'y en a que 1 ou 2 sur une ligne */
+    gap: 40px;
 }
 
 .gallery-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; /* Espace entre l'image et le lien */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex: 1 1 300px;     /* <-- MAGIQUE : L'élément peut grandir (1), rétrécir (1) avec une base de 300px */
+    max-width: 350px;    /* <-- SÉCURITÉ : Empêche l'élément de devenir trop large sur un très grand écran */
 }
 
-/* 9. Style des images avec la forme inclinée */
+/* 9. Style des images avec la forme inclinée (MODIFIÉ) */
 .image-clipper {
-    width: 280px; /* Ajustez la taille selon vos besoins */
-    height: 350px;
-    background-color: var(--bg-footer); /* Fond bleu si l'image ne charge pas */
-    /* La magie du clip-path pour créer la forme ! */
-    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
-    transition: transform 0.3s ease-in-out;
+    width: 100%;         /* <-- FLEXIBLE : L'image prend 100% de la largeur de son parent (.gallery-item) */
+    aspect-ratio: 280 / 350; /* <-- MODERNE : Conserve les proportions (largeur/hauteur) sans fixer la hauteur */
+    background-color: var(--bg-footer);
+    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+    transition: transform 0.3s ease-in-out;
 }
 
 .image-clipper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Assure que l'image remplit l'espace sans se déformer */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .gallery-item:hover .image-clipper {
-    transform: scale(1.05); /* Effet de zoom léger au survol */
+    transform: scale(1.05);
 }
 
 .project-link {
-    font-family: var(--font-headings);
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
-    border-bottom: 2px solid transparent; /* Prépare l'animation du soulignement */
-    transition: border-color 0.3s ease;
+    font-family: var(--font-headings);
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
 }
 
 .project-link:hover {
-    border-color: var(--text-dark); /* Fait apparaître le soulignement au survol */
+    border-color: var(--text-dark);
 }
 
-/* 10. Responsive pour la page Travaux */
-@media (max-width: 992px) {
-    .gallery-container {
-        flex-direction: column; /* Empile les projets verticalement */
-        align-items: center;
-        gap: 50px;
-    }
-    
-    .work-title {
-        text-align: center;
-        font-size: 1.8rem;
-    }
-    
-    .page-container {
-        padding: 20px;
-    }
+/* 10. Responsive pour la page Travaux (SIMPLIFIÉ) */
+@media (max-width: 768px) {
+    .work-title {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    .page-container {
+        padding: 20px;
+    }
 }
