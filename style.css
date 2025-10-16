@@ -116,6 +116,10 @@ body {
     color: #000;
 }
 
+.main-nav a:hover::after {
+    width: 100%; /* Le trait prend toute la largeur au survol */
+}
+
 /* 4. Bouton sur l'image (CTA) */
 .cta-button {
     position: absolute;
