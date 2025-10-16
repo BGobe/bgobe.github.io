@@ -97,6 +97,19 @@ body {
     color: var(--text-dark);
     text-decoration: none;
     transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.main-nav a::after {
+    content: ''; /* Obligatoire pour créer un pseudo-élément */
+    position: absolute;
+    width: 0; /* Le trait est invisible au départ */
+    height: 2px; /* Épaisseur du trait */
+    bottom: 0; /* Positionné en bas du lien (grâce au padding-bottom) */
+    left: 0; /* Commence à gauche */
+    background-color: var(--logo-color); /* Utilise la couleur du logo pour le trait */
+    transition: width 0.3s ease-in-out; /* Animation douce de la largeur */
 }
 
 .main-nav a:hover {
