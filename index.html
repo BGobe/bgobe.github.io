@@ -3,61 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio Personnel</title>
+    <title>Bastien Gobe - Professeur Agrégé de Mathématiques</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="custom.css"> 
+
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="biographie.html">Biographie</a></li>
-                <li><a href="projet1.html">Projet 1</a></li>
-                <li><a href="projet2.html">Projet 2</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section class="hero">
-            <h1>Bienvenue sur mon site personnel !</h1>
-            <p>Découvrez qui je suis, mes réalisations et mes passions.</p>
+    <div class="split-layout">
+        <div class="left-panel">
+            <div class="content-wrapper">
+                <img src="images/logo-bastien-gobe.png" alt="Logo Bastien Gobe" class="main-logo">
+                <h2>Professeur agrégé de mathématiques</h2>
+                
+                <nav class="main-nav-links">
+                    <ul>
+                        <li><a href="biographie.html">Curriculum</a></li>
+                        <li><a href="projet1.html">Ressources pédagogiques</a></li>
+                        <li><a href="projet2.html">Projets récents</a></li>
+                        <li><a href="#">Activités extra-scolaires</a></li>
+                    </ul>
+                </nav>
+            </div>
             
-        </section>
-
-        <section class="quick-links">
-            <h2>Accès rapide</h2>
-            <ul>
-                <li><a href="biographie.html">En savoir plus sur moi</a></li>
-                <li><a href="projet1.html">Voir mon premier projet</a></li>
-                <li><a href="projet2.html">Découvrir mon deuxième projet</a></li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-    <div class="footer-content">
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/bastien-gobe-335327382" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/BGobe" target="_blank" rel="noopener noreferrer" aria-label="Dépôt GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.geogebra.org/u/bgobe" target="_blank" rel="noopener noreferrer" aria-label="Profil GeoGebra">
-                <i class="fas fa-shapes"></i>
-            </a>
+            <footer class="panel-footer">
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/bastiengobe/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/bastiengobe" target="_blank" rel="noopener noreferrer" aria-label="Dépôt GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.geogebra.org/u/bastiengobe" target="_blank" rel="noopener noreferrer" aria-label="Profil GeoGebra">
+                        <i class="fas fa-shapes"></i>
+                    </a>
+                </div>
+                <div class="legal-links">
+                    <p>&copy; 2025 Bastien Gobe. Tous droits réservés.</p>
+                    <a href="mentions-legales.html">Mentions Légales</a>
+                </div>
+            </footer>
         </div>
 
-        <div class="legal-links">
-            <p>&copy; 2025 Bastien Gobé. Tous droits réservés.</p>
-            <a href="mentions-legales.html">Mentions Légales</a>
+        <div class="right-panel">
+            <img src="images/photo-bastien-gobe.jpg" alt="Bastien Gobe" class="background-image">
+            <a href="biographie.html" class="cta-button">Apprenez à me connaître</a>
         </div>
     </div>
-</footer>
+
 </body>
 </html>
