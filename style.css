@@ -354,26 +354,16 @@ body {
     margin-bottom: 30px;
 }
 
-/* Titres type "COLLÈGE :", "LYCÉE :" */
-.cv-sub-title {
-    font-family: var(--font-headings);
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-
-/* Titres type "COMPÉTENCES PÉDAGOGIQUES" */
+/* Titres de section unifiés (ex: "COLLÈGE :", "COMPÉTENCES PÉDAGOGIQUES") */
+.cv-sub-title,
 .cv-category-title {
-    font-family: var(--font-body); /* Utilise la police du corps de texte */
-    font-size: 0.9rem;
-    font-weight: 700; /* Mais en gras */
-    color: var(--text-dark);
-    text-transform: uppercase;
-    margin-bottom: 15px;
+    font-family: var(--font-headings); /* Utilise la police de titre (Montserrat) */
+    font-size: 1.2rem; /* Taille de police unifiée */
+    font-weight: 600; /* Poids de police unifié */
+    color: var(--text-dark);
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
-
 /* 12. Style des listes à puces du CV */
 .cv-sub-section ul {
     list-style: none; /* Enlève les puces par défaut */
