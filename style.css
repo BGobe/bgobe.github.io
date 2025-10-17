@@ -325,3 +325,112 @@ body {
         padding: 20px;
     }
 }
+
+/* 11. Structure de la page CV */
+.cv-section {
+    max-width: 1600px; /* Plus large pour accueillir les 3 colonnes */
+    margin: 0 auto;
+    font-size: 0.9rem; /* Texte un peu plus petit pour un CV dense */
+    line-height: 1.6;
+}
+
+.cv-grid {
+    display: grid;
+    /* Crée 3 colonnes de largeur égale */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px; /* Espace entre les colonnes */
+}
+
+.cv-main-title {
+    font-family: var(--font-headings);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.cv-sub-section {
+    margin-bottom: 30px;
+}
+
+/* Titres type "COLLÈGE :", "LYCÉE :" */
+.cv-sub-title {
+    font-family: var(--font-headings);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* Titres type "COMPÉTENCES PÉDAGOGIQUES" */
+.cv-category-title {
+    font-family: var(--font-body); /* Utilise la police du corps de texte */
+    font-size: 0.9rem;
+    font-weight: 700; /* Mais en gras */
+    color: var(--text-dark);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* 12. Style des listes à puces du CV */
+.cv-sub-section ul {
+    list-style: none; /* Enlève les puces par défaut */
+    padding-left: 10px;
+    margin: 0;
+}
+
+/* Gère les listes imbriquées (ex: sous "LYCÉE") */
+.cv-sub-section ul ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.cv-sub-section li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 15px; /* Espace pour la puce personnalisée */
+}
+
+/* Crée la puce personnalisée (le "•") */
+.cv-sub-section li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Style pour les mots en gras (ex: "Ingénierie pédagogique :") */
+.cv-sub-section li strong {
+    font-weight: 700;
+    color: var(--text-dark); /* Assure la bonne couleur */
+}
+
+
+/* 13. Responsive pour la page Curriculum */
+
+@media (max-width: 1024px) {
+    /* Sur tablette, on passe à 2 colonnes */
+    .cv-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    .cv-section {
+        font-size: 0.85rem; /* Réduit un peu le texte */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Sur mobile, tout passe sur 1 colonne */
+    .cv-grid {
+        grid-template-columns: 1fr;
+    }
+    .cv-main-title {
+        text-align: center; /* Centre les titres principaux */
+        font-size: 1.8rem;
+    }
+}
