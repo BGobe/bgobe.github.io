@@ -491,3 +491,35 @@ body {
 
     /* Le style .cv-main-title est déjà centré sur mobile grâce à vos règles précédentes */
 }
+/* 16. Conteneur des boutons de navigation */
+.about-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur mobile */
+    gap: 20px; /* Espace entre les boutons */
+    margin-top: 50px; /* Espace au-dessus des boutons */
+    padding-bottom: 20px; /* Un peu d'espace avant le footer */
+}
+
+/* 17. Style des boutons */
+/* (Style similaire à .cta-button mais avec couleurs inversées) */
+.btn-link {
+    background-color: var(--text-dark); /* Fond bleu marine */
+    color: var(--text-light); /* Texte beige clair */
+    padding: 12px 28px;
+    text-decoration: none;
+    font-family: var(--font-headings);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 50px; /* Bords arrondis pour la forme "pilule" */
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Empêche le texte du bouton de se casser */
+}
+
+.btn-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
